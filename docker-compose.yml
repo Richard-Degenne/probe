@@ -1,0 +1,22 @@
+---
+version: '3.8'
+
+services:
+  ##
+  # Back-end
+  ruby:
+    build: .
+    volumes:
+      - .:/usr/src/app/
+    environment:
+      DATABASE_URL: postgres://probe:secret-probe@postgres
+    ports:
+      - "127.0.0.1:3000:3000"
+    command: "bundle exec rails server --binding 0.0.0.0"
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_USER: probe
+      POSTGRES_PASSWORD: secret-probe
+    ports:
+      - "127.0.0.1:5432:5432"
