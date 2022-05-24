@@ -2,6 +2,10 @@
 
 describe ProjectsController, type: :routing do
   describe 'routing' do
+    it 'defaults to index' do
+      expect(get: '/').to route_to('projects#index')
+    end
+
     it 'routes to #index' do
       expect(get: '/projects').to route_to('projects#index')
     end
