@@ -30,4 +30,16 @@
 # available at https://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  projects:
+    create:
+      success: Project successfully created.
+    destroy:
+      success: Project successfully destroyed.
+    form:
+      error:
+        one: '%{count} error prevented the project from being saved.'
+        other: '%{count} errors prevented the project from being saved.'
+    new:
+      title: New project
+    update:
+      success: Project successfully updated.
